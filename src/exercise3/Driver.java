@@ -1,6 +1,7 @@
 package exercise3;
 
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Arrays;
 
 public class Driver
@@ -18,10 +19,14 @@ public class Driver
 			System.out.println(nums[i]);
 		}
 
-		System.out.println("This is the unsorted array:\n**************************************\n" + Arrays.toString(nums) + "\n**************************************");
+		System.out.println("This is the unsorted array:\n**************************************\n"
+				+ Arrays.toString(nums) + "\n**************************************");
 
-		String entry = System.console().readLine("Enter sorting algorithm to use (b,i,s or q): ");
-
+		Scanner scanner = new Scanner(System.in);       
+		System.out.println("Enter sorting algorithm to use (b,i,s or q): ");
+		String entry = scanner.nextLine();       
+		scanner.close();
+	
 		switch (entry) {
 			case "b":
 				bubbleSort(nums);

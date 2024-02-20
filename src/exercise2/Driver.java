@@ -2,6 +2,7 @@ package exercise2;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Driver
 {
@@ -23,7 +24,10 @@ public class Driver
 		}
 		System.out.println(Arrays.toString(nums));
 
-		int target = Integer.parseInt(System.console().readLine("Enter a target number: "));
+		Scanner scanner = new Scanner(System.in);       
+		System.out.println("Enter a target number: ");
+		int target = Integer.parseInt(scanner.nextLine());       
+		scanner.close();
 		int result = binarySearch(nums, target);
 		
 		if( result == -1 )
@@ -40,7 +44,6 @@ public class Driver
 	{
 		int low = 0;
 		int high = nums.length - 1;
-		System.out.println("high: " + high);
 		int mid = high / 2;
 		while (low <= high) {
 			if (nums[mid] < target) {
